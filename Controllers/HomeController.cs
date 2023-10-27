@@ -17,7 +17,11 @@ namespace DigiDoodleDance.Controllers
         {
             return View();
         }
+        public IActionResult Pixel()
+        {
 
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
