@@ -6,17 +6,35 @@
 
 
 <div>
-    <h1>Pixel Art Creator</h1>
+
+    @{
+        ViewData["Title"] = "Pixel Art";
+    }
 
 
-    <h2>Pick A Color</h2>
-    <input type="color" id="colorPicker">
 
-    <h2>Design Canvas</h2>
-    <canvas id="pixelCanvas" width="400" height="400"></canvas>
-    <button id="clearCanvasButton" class=" bg-transparent">
-        <i class="fa-solid fa-trash-can"></i>
-    </button>
+    <div>
+        <h1>Pixel Art Creator</h1>
+
+
+        <h2>Pick A Color</h2>
+        <input type="color" id="colorPicker">
+
+        <h2>Design Canvas</h2>
+        <label for="pixelSize">Pixel Size:</label>
+        <input type="range" id="pixelSize" min="1" max="10" value="2">
+
+        <button id="clearCanvasButton" class=" bg-transparent">
+            <i class="fa-solid fa-trash-can"></i>
+        </button>
+        <br/>
+        <canvas id="pixelCanvas" width="400" height="400"></canvas>
+
+
+
+
+    </div>
+
 
 
 
