@@ -55,6 +55,11 @@
         ctx.fillStyle = 'white';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
     });
+     fillCanvasButton.addEventListener('click', () => {
+        // Fill canvas with chosen color background
+        ctx.fillStyle = colorPicker.value;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    });
 }
 
 // Call makeGrid to initialize the drawing functionality
