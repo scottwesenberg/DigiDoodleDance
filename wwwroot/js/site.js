@@ -36,6 +36,19 @@
         ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
     });
 
+    document.getElementById('saveButton').addEventListener('click', () => {
+        const dataURL = canvas.toDataURL('image/png');
+        const downloadLink = document.createElement('a');
+        const pngName = document.getElementById('dataInput')
+        const inputData = dataInput.value;
+        if (inputData.trim() === '') {
+            alert('Please enter some data before saving.');
+            return;
+        }
+        downloadLink.href = dataURL;
+        downloadLink.download = inputData + '.png';
+        downloadLink.click();
+    });
     // Trash Can button in Pixel
     clearCanvasButton.addEventListener('click', () => {
         // Clear the canvas by filling it with a white background
