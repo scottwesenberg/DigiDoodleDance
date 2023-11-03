@@ -55,6 +55,7 @@
         ctx.fillStyle = 'white';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
     });
+     // Bucket button in Pixel
      fillCanvasButton.addEventListener('click', () => {
         // Fill canvas with chosen color background
         ctx.fillStyle = colorPicker.value; //Use ColorPicker value for fill
