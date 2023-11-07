@@ -8,6 +8,14 @@
     // Initialize pixel size
     let pixelSize = parseInt(pixelSizeInput.value);
 
+    document.getElementById('saveButton').addEventListener('click', () => {
+        const dataURL = canvas.toDataURL('image/png');
+        const downloadLink = document.createElement('a');
+        downloadLink.href = dataURL;
+        downloadLink.download = 'canvas_image.png';
+        downloadLink.click();
+    });
+
     // Listen for changes in the pixel size input
     pixelSizeInput.addEventListener("input", () => {
         pixelSize = parseInt(pixelSizeInput.value); // Update the pixel size
@@ -55,11 +63,11 @@
         ctx.fillStyle = 'white';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
     });
-     // Bucket button in Pixel
-     fillCanvasButton.addEventListener('click', () => {
+
+    fillCanvasButton.addEventListener('click', () => {
         // Fill canvas with chosen color background
-        ctx.fillStyle = colorPicker.value; //Use ColorPicker value for fill
-        ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill canvas with new color
+        ctx.fillStyle = colorPicker.value;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
     });
 }
 
